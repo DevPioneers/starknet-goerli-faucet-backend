@@ -1,0 +1,23 @@
+{
+    "nativeAddress": "0x1111111111111111111111111111111111111111",
+    "logs": {
+        "level": "debug"
+    },
+    "db": {
+        "uri": {
+            "mainnet": "mongodb://localhost:27017/",
+            "testnet": "mongodb://localhost:27017/"
+        }
+    },
+    "network": "goerli",
+    "goerli": {
+        "chainName": "goerli",
+        "port": 36000,
+        "db": "mongodb://localhost:27017/faucetTestnet",
+        "fromBlock": 1972715,
+        "provider": "https://starknet-goerli.infura.io/v3/8912645e36c04d75b6bc505b4de28ed3",
+        "faucetAmount": "10000000000000000",
+        "seedWallet": "0x005Ad2B23044C44CC48b5a20a58Ba377eB516420EBf66f4403E8eA082dB5a9FA",
+        "faucetToken": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"
+    }
+}

@@ -1,0 +1,8 @@
+target
+.DS_Store
+*.sh
+scripts
+.env
+node_modules
+testScripts
+
