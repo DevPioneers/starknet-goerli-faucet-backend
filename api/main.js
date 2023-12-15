@@ -29,7 +29,7 @@ router.post('/faucet', [
             let lastTimestampFaucet = userDb.lastTimestampFaucet
             if (timeNow - lastTimestampFaucet < 86400) {
                 return res.status(200).json({
-                    status: 'Faucet is only avaiable 1 time per day'
+                    status: 'Faucet is only available 1 time per day'
                 })
             }
         }
@@ -60,7 +60,7 @@ router.post('/faucet', [
     } catch (e) {
         console.error(`error from api request faucet ${e}`)
         return res.status(400).json({
-            status: `Fail to send transfer faucet to ${user}`
+            status: `Fail to transfer faucet to ${user}`
         })
     }
 
