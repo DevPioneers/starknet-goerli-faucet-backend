@@ -28,7 +28,7 @@ router.post('/faucet', [
         if (userDb) {
             let lastTimestampFaucet = userDb.lastTimestampFaucet
             if (timeNow - lastTimestampFaucet < 86400) {
-                return res.status(200).json({
+                return res.status(403).json({
                     status: 'Faucet is only available 1 time per day'
                 })
             }
@@ -54,7 +54,7 @@ router.post('/faucet', [
             }
         }, { upsert: true, new: true })
         return res.status(200).json({
-            status: `done transfer faucet to ${user}`
+            status: `Done transfer faucet to ${user}`
         })
 
     } catch (e) {
