@@ -6,7 +6,7 @@ const Helper = require('../helpers/helpers');
 const abiJson = require('../abis/ERC20.sierra.json')
 const configInfo = Helper.getConfigInfo()
 
-const { RpcProvider, Account, Contract, provider, } = require("starknet");
+const { RpcProvider, Account, Contract } = require("starknet");
 
 require('dotenv').config()
 
@@ -28,7 +28,7 @@ router.post('/faucet', [
         if (userDb) {
             let lastTimestampFaucet = userDb.lastTimestampFaucet
             if (timeNow - lastTimestampFaucet < 86400) {
-                return res.status(400).json({
+                return res.status(200).json({
                     status: 'Faucet is only avaiable 1 time per day'
                 })
             }
@@ -53,7 +53,7 @@ router.post('/faucet', [
                 count: count
             }
         }, { upsert: true, new: true })
-        return res.json({
+        return res.status(200).json({
             status: `done transfer faucet to ${user}`
         })
 
